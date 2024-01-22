@@ -1,0 +1,89 @@
+﻿<Window x:Class="PickNChooseBazaar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PickNChooseBazaar"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="825">
+    <Grid>
+        <TabControl>
+            <!-- Tab 1 with Form 1 -->
+            <TabItem Header="Add Product">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="461*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="Name:"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Name="txtName" Margin="5"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Content="Description:"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Name="txtDescription" HorizontalAlignment="Left" Height="100" Margin="5" TextWrapping="Wrap" Text="Type here..." VerticalAlignment="Top" Width="620" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+
+                    
+
+                    <Label Grid.Row="2" Grid.Column="0" Content="Price:"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Name="txtPrice" Margin="5"/>
+
+                    <Label Grid.Row="3" Grid.Column="0" Content="Category:"/>
+                    <ComboBox x:Name="comboBoxCategory" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+                    <Label Grid.Row="4" Grid.Column="0" Content="Quantity:"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Name="txtQuantity" Margin="5"/>
+
+                    <Label Grid.Row="5" Grid.Column="0" Content="Manufacturer:"/>
+                    <TextBox Grid.Row="5" Grid.Column="1" Name="txtManufacturer" Margin="5"/>
+
+                    <Label Grid.Row="6" Grid.Column="0" Content="Store:"/>
+                    <ComboBox x:Name="comboBoxStore" Grid.Row="6" Grid.Column="1" Margin="5"/>
+                    <!-- Other form controls for Form 1 -->
+
+                    <Button Grid.Row="7" Grid.Column="1" Content="Add" Click="Add_Click" Width="98" VerticalAlignment="Center"/>
+
+                    <Button Grid.Row="7" Grid.Column="1" Content="Cancel" Click="Cancel_Click" VerticalAlignment="Center" Width="98" HorizontalAlignment="Right"/>
+                </Grid>
+            </TabItem>
+
+            <!-- Tab 2 with Form 2 -->
+            <TabItem Header="Form 2">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="Address:"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Name="AddressTextBox2" Margin="5"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Content="Phone:"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Name="PhoneTextBox2" Margin="5"/>
+
+                    <!-- Other form controls for Form 2 -->
+
+                    <Button Grid.Row="3" Grid.Column="1" Content="Save" Click="Save_Click" Width="98" VerticalAlignment="Center"/>
+
+                    <Button Grid.Row="3" Grid.Column="1" Content="Cancel" Click="Cancel_Click" Width="98" VerticalAlignment="Center"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
