@@ -10,13 +10,13 @@
         <TabControl>
             <!-- Tab 1 with Form 1 -->
             <TabItem Header="Add Product">
-                <Grid Margin="10">
+                <Grid Margin="10" Name="AddProduct">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
-
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -31,7 +31,7 @@
                     <TextBox Grid.Row="0" Grid.Column="1" Name="txtName" Margin="5"/>
 
                     <Label Grid.Row="1" Grid.Column="0" Content="Description:"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Name="txtDescription" HorizontalAlignment="Left" Height="100" Margin="5" TextWrapping="Wrap" Text="Type here..." VerticalAlignment="Top" Width="620" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Name="txtDescription" HorizontalAlignment="Left" Height="100" Margin="5" TextWrapping="Wrap"  VerticalAlignment="Top" Width="620" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
 
                     
 
@@ -47,42 +47,41 @@
                     <Label Grid.Row="5" Grid.Column="0" Content="Manufacturer:"/>
                     <TextBox Grid.Row="5" Grid.Column="1" Name="txtManufacturer" Margin="5"/>
 
-                    <Label Grid.Row="6" Grid.Column="0" Content="Store:"/>
+                    <Label Grid.Row="6" Grid.Column="0" Content="Brand:"/>
                     <ComboBox x:Name="comboBoxStore" Grid.Row="6" Grid.Column="1" Margin="5"/>
+
+                    <Label Grid.Row="7" Grid.Column="0" Content="Pallet Id:"/>
+                    <TextBox Grid.Row="7" Grid.Column="1" Name="txtPalletId" Margin="5"/>
                     <!-- Other form controls for Form 1 -->
 
-                    <Button Grid.Row="7" Grid.Column="1" Content="Add" Click="Add_Click" Width="98" VerticalAlignment="Center"/>
+                    <Button Grid.Row="8" Grid.Column="1" Content="Add" Click="Add_Click" Width="98" VerticalAlignment="Center"/>
 
-                    <Button Grid.Row="7" Grid.Column="1" Content="Cancel" Click="Cancel_Click" VerticalAlignment="Center" Width="98" HorizontalAlignment="Right"/>
+                    <Button Grid.Row="8" Grid.Column="1" Content="Cancel" Click="Cancel_Click" VerticalAlignment="Center" Width="98" HorizontalAlignment="Right"/>
                 </Grid>
             </TabItem>
 
             <!-- Tab 2 with Form 2 -->
-            <TabItem Header="Form 2">
+            <TabItem Header="Product List">
+                
                 <Grid Margin="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
+                        
                     </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="0" Grid.Column="0" Content="Address:"/>
-                    <TextBox Grid.Row="0" Grid.Column="1" Name="AddressTextBox2" Margin="5"/>
+                    <DataGrid x:Name="MyDataGrid" AutoGenerateColumns="True"  Grid.Row="0">
+                        <!--<DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                            <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
+                            --><!-- Add more columns as needed --><!--
+                        </DataGrid.Columns>-->
+                        
+                    </DataGrid>
+                    <Button Grid.Row="1" Content="Refresh" Click="RefreshButton_Click" Margin="5"/>
 
-                    <Label Grid.Row="1" Grid.Column="0" Content="Phone:"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Name="PhoneTextBox2" Margin="5"/>
-
-                    <!-- Other form controls for Form 2 -->
-
-                    <Button Grid.Row="3" Grid.Column="1" Content="Save" Click="Save_Click" Width="98" VerticalAlignment="Center"/>
-
-                    <Button Grid.Row="3" Grid.Column="1" Content="Cancel" Click="Cancel_Click" Width="98" VerticalAlignment="Center"/>
                 </Grid>
+               
             </TabItem>
         </TabControl>
     </Grid>
